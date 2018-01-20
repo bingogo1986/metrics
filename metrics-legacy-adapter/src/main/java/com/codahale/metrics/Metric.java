@@ -19,7 +19,7 @@ public interface Metric {
             return Gauge.of((io.dropwizard.metrics5.Gauge) metric);
         } else if (metric instanceof io.dropwizard.metrics5.MetricSet) {
             return MetricSet.of((io.dropwizard.metrics5.MetricSet) metric);
-        } {
+        } else {
             throw new IllegalArgumentException("Can't find adaptor class for metric of type: " + metric.getClass().getName());
         }
     }

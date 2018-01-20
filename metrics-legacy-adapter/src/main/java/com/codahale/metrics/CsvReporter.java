@@ -64,7 +64,7 @@ public class CsvReporter extends ScheduledReporter {
         }
 
         public Builder withCsvFileProvider(CsvFileProvider csvFileProvider) {
-            delegate.withCsvFileProvider(new CsvFileProvider.Adapter(csvFileProvider));
+            delegate.withCsvFileProvider(csvFileProvider::getFile);
             return this;
         }
 
